@@ -1,0 +1,66 @@
+Vehicle Rental Backend API
+
+A backend REST API for a vehicle rental system built with Node.js, Express, TypeScript, and PostgreSQL  
+The project includes JWT authentication, role-based authorization (Admin), and full Vehicle CRUD operations.
+
+ Live API Link
+
+ https://vehicle-rental-backend-livid.vercel.app/
+
+ Tech Stack
+- Node.js
+- Express.js
+- TypeScript
+- PostgreSQL (NeonDB)
+- JWT Authentication
+- Vercel (Deployment)
+
+Features
+- User Signup & Login
+- JWT Protected Routes
+- Role-based Authorization (Admin only)
+- Vehicle CRUD (Create, Read, Update, Delete)
+- Secure API with middleware
+
+
+API Endpoints
+
+User
+- POST `/api/v1/users/signup`
+- POST `/api/v1/users/login`
+
+Vehicle
+- GET `/api/v1/vehicles`
+- GET `/api/v1/vehicles/:id`
+- POST `/api/v1/vehicles` (Admin only)
+- PUT `/api/v1/vehicles/:id` (Admin only)
+- DELETE `/api/v1/vehicles/:id` (Admin only)
+
+Authentication & Authorization
+- JWT-based authentication
+- Admin role required for POST, PUT, DELETE vehicle routes
+- Token must be sent via header:
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjMsInJvbGUiOiJhZG1pbiIsIm5hbWUiOiJBZG1pbiBVc2VyIiwiaWF0IjoxNzY2NTA3MDkyLCJleHAiOjE3NjY1MTA2OTJ9.cgwRtl_0dugM_58GBVUxFp35pvb5NNUMHcsWQj68LCc
+
+
+.env:
+
+DATABASE_URL=postgresql://neondb_owner:npg_Y03oQCjkirSB@ep-lingering-wind-adbk70jj.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+PORT=5000
+JWT_SECRET=my_super_secret_key_123
+ 
+.env` file is not pushed to GitHub.
+ Run Locally
+
+```bash
+npm install
+npm run dev
+
+GitHub Repository
+https://github.com/kamrul125/assignmen_2
+
+
+Author
+
+Md Kamruzzaman
