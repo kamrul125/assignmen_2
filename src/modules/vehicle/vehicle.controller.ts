@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import * as vehicleService from "./vehicle.service";
 import { AuthRequest } from "../../middlewares/auth";
 
-// 🔹 Create Vehicle (Admin only)
+// Create Vehicle (Admin only)
 export const createVehicle = async (req: AuthRequest, res: Response) => {
   try {
     if (req.user?.role !== "admin") {
@@ -24,7 +24,7 @@ export const createVehicle = async (req: AuthRequest, res: Response) => {
   }
 };
 
-// 🔹 Get All Vehicles (Public)
+// Get All Vehicles (Public)
 export const getAllVehicles = async (_req: Request, res: Response) => {
   try {
     const vehicles = await vehicleService.getAllVehicles();
@@ -39,7 +39,7 @@ export const getAllVehicles = async (_req: Request, res: Response) => {
   }
 };
 
-// 🔹 Get Single Vehicle
+//  Get Single Vehicle
 export const getVehicleById = async (req: Request, res: Response) => {
   try {
     const id = Number(req.params.id);
@@ -61,7 +61,7 @@ export const getVehicleById = async (req: Request, res: Response) => {
   }
 };
 
-// 🔹 Update Vehicle (Admin only)
+//  Update Vehicle (Admin only)
 export const updateVehicle = async (req: AuthRequest, res: Response) => {
   try {
     if (req.user?.role !== "admin") {
@@ -84,7 +84,7 @@ export const updateVehicle = async (req: AuthRequest, res: Response) => {
   }
 };
 
-// 🔹 Delete Vehicle (Admin only)
+//  Delete Vehicle (Admin only)
 export const deleteVehicle = async (req: AuthRequest, res: Response) => {
   try {
     if (req.user?.role !== "admin") {

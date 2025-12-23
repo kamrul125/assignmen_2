@@ -1,7 +1,7 @@
 import pool from "../../db";
 import { Vehicle } from "./vehicle.model";
 
-// 🔹 Create Vehicle (Admin)
+//  Create Vehicle (Admin)
 export const createVehicle = async (payload: Vehicle) => {
   const { name, type, price_per_day } = payload;
 
@@ -15,7 +15,7 @@ export const createVehicle = async (payload: Vehicle) => {
   return result.rows[0];
 };
 
-// 🔹 Get All Vehicles (Public)
+//  Get All Vehicles (Public)
 export const getAllVehicles = async () => {
   const result = await pool.query(
     `SELECT * FROM vehicles ORDER BY created_at DESC`
@@ -23,7 +23,7 @@ export const getAllVehicles = async () => {
   return result.rows;
 };
 
-// 🔹 Get Single Vehicle
+//  Get Single Vehicle
 export const getVehicleById = async (id: number) => {
   const result = await pool.query(
     `SELECT * FROM vehicles WHERE id = $1`,
@@ -32,7 +32,7 @@ export const getVehicleById = async (id: number) => {
   return result.rows[0];
 };
 
-// 🔹 Update Vehicle (Admin)
+//  Update Vehicle (Admin)
 export const updateVehicle = async (
   id: number,
   payload: Partial<Vehicle>
@@ -53,7 +53,7 @@ export const updateVehicle = async (
   return result.rows[0];
 };
 
-// 🔹 Delete Vehicle (Admin)
+// Delete Vehicle (Admin)
 export const deleteVehicle = async (id: number) => {
   await pool.query(
     `DELETE FROM vehicles WHERE id = $1`,

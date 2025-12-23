@@ -4,11 +4,11 @@ import { auth } from "../../middlewares/auth";
 
 const router = Router();
 
-// 🔹 Public routes
+//  Public routes
 router.get("/", vehicleController.getAllVehicles);
 router.get("/:id", vehicleController.getVehicleById);
 
-// 🔹 Admin only routes
+//  Admin only routes
 router.post("/", auth, vehicleController.createVehicle);
 router.put("/:id", auth, vehicleController.updateVehicle);
 router.delete("/:id", auth, vehicleController.deleteVehicle);
