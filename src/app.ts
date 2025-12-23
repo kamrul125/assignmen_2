@@ -16,7 +16,7 @@ app.use("/api/v1/vehicles", vehicleRoutes);
 
 // Root route
 app.get("/", (req, res) => {
-  res.send("Vehicle Rental API is running 🚗");
+  res.send("Vehicle Rental API is running ");
 });
 
 export default app;
