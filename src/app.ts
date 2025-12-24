@@ -13,7 +13,7 @@ app.use(express.json());
 
 
 app.get("/", (req, res) => {
-  res.send("Vehicle Rental API is running 🚗");
+  res.send("Vehicle Rental API is running ");
 });
 
 
