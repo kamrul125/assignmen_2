@@ -41,7 +41,7 @@ Authentication & Authorization
 - Admin role required for POST, PUT, DELETE vehicle routes
 - Token must be sent via header:
 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjMsInJvbGUiOiJhZG1pbiIsIm5hbWUiOiJBZG1pbiBVc2VyIiwiaWF0IjoxNzY2NTA3MDkyLCJleHAiOjE3NjY1MTA2OTJ9.cgwRtl_0dugM_58GBVUxFp35pvb5NNUMHcsWQj68LCc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInJvbGUiOiJhZG1pbiIsIm5hbWUiOiJBZG1pbiBVc2VyIiwiaWF0IjoxNzY2NTgwNzg0LCJleHAiOjE3NjY1ODQzODR9.KVjBchjnpHDY3V4BMRXfUKpS3kKafTQ_tOCOUCKSkiw
 
 
 .env:
