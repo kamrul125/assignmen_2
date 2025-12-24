@@ -57,6 +57,16 @@ JWT_SECRET=my_super_secret_key_123
 npm install
 npm run dev
 
+1 Root
+vercel:  https://vehicle-rental-backend-livid.vercel.app/   :   "message": "Vehicle Rental API is running "
+https://vehicle-rental-backend-livid.vercel.app/api/v1/vehicles  :  সব গাড়ির লিস্ট 
+https://vehicle-rental-backend-livid.vercel.app/api/v1/vehicles/14  :  নির্দিষ্ট গাড়ির ডিটেইল দেখাবে 
+https://vehicle-rental-backend-livid.vercel.app/api/v1/vehicles  :  নতুন গাড়ি যোগ করবে (admin required) |
+https://vehicle-rental-backend-livid.vercel.app/api/v1/vehicles/14 : গাড়ির তথ্য update করবে (admin required) |
+ 
+ https://vehicle-rental-backend-livid.vercel.app/api/v1/vehicles/1   : গাড়ি মুছে দেবে (admin required) |
+
+
 GitHub Repository
 https://github.com/kamrul125/assignmen_2
 
