@@ -1,18 +1,19 @@
 import { Router } from "express";
-import { signup, login } from "./user.controller";
+import { signup, signin } from "./auth.controller";
 import { auth } from "../../middlewares/auth";
 
 const router = Router();
 
-router.post("/register", signup);  
-router.post("/login", login);
 
+router.post("/signup", signup);
+router.post("/signin", signin);
 
 
 router.get("/me", auth, (req, res) => {
-  res.json({
+  res.status(200).json({
+    success: true,
     message: "Protected route accessed",
-    user: (req as any).user,
+    data: (req as any).user,
   });
 });
 
