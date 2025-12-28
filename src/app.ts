@@ -1,6 +1,7 @@
 import express, { Application } from "express";
 import cors from "cors";
-import userRoutes from "./modules/auth/auth.routes";
+
+import authRoutes from "./modules/auth/auth.routes";
 import vehicleRoutes from "./modules/vehicle/vehicle.routes";
 
 const app: Application = express();
@@ -10,35 +11,32 @@ app.use(express.json());
 
 // Root route
 app.get("/", (req, res) => {
-  res.send({
-    message: "Vehicle Rental API is running ",
+  res.json({
+    message: "Vehicle Rental API is running 🚗",
+    base: "/api/v1",
     endpoints: {
-      vehicles: {
-        GET: "/cars",
-        GET_ID: "/cars/:id",
-        POST: "/cars (admin only)",
-        PUT: "/cars/:id (admin only)",
-        DELETE: "/cars/:id (admin only)"
+      auth: {
+        signup: "POST /api/v1/auth/signup",
+        signin: "POST /api/v1/auth/signin",
       },
-      users: {
-        GET: "/users (admin only)",
-        GET_ID: "/users/:id",
-        REGISTER: "/users/register",
-        LOGIN: "/users/login",
-        PUT: "/users/:id",
-        DELETE: "/users/:id (admin only)"
-      }
-    }
+      vehicles: {
+        getAll: "GET /api/v1/vehicles",
+        getOne: "GET /api/v1/vehicles/:id",
+        create: "POST /api/v1/vehicles (admin)",
+        update: "PUT /api/v1/vehicles/:id (admin)",
+        delete: "DELETE /api/v1/vehicles/:id (admin)",
+      },
+    },
   });
 });
 
+// ✅ AUTH ROUTES (EXAMINER REQUIRED)
+app.use("/api/v1/auth", authRoutes);
 
-app.use("/api/v1/users", userRoutes);
-app.use("/users/register", userRoutes); 
-app.use("/users/login", userRoutes);   
-
-
+// ✅ VEHICLE ROUTES
 app.use("/api/v1/vehicles", vehicleRoutes);
-app.use("/cars", vehicleRoutes);     
+
+// (optional alias for demo)
+app.use("/cars", vehicleRoutes);
 
 export default app;
