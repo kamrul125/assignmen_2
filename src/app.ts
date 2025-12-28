@@ -30,13 +30,13 @@ app.get("/", (req, res) => {
   });
 });
 
-// ✅ AUTH ROUTES (EXAMINER REQUIRED)
+
 app.use("/api/v1/auth", authRoutes);
 
-// ✅ VEHICLE ROUTES
+
 app.use("/api/v1/vehicles", vehicleRoutes);
 
-// (optional alias for demo)
+
 app.use("/cars", vehicleRoutes);
 
 export default app;
